@@ -39,6 +39,7 @@ class ProductsList extends StatelessWidget {
                     key: Key(product.id.toString()),
                     onDismissed: (direction) {
                       context.read<ProductCubit>().deleteProduct(product.id!);
+                      context.read<ProductCubit>().getAllProduct();
                     },
                     child: ListTile(
                       title: Text(product.name),
